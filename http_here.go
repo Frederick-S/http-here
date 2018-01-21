@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"strconv"
@@ -19,8 +20,7 @@ func main() {
 			port, err = strconv.Atoi(arguments[i+1])
 
 			if err != nil {
-				fmt.Println(err)
-				os.Exit(1)
+				log.Fatal(err)
 			}
 		} else if arguments[i] == "--path" {
 			path = arguments[i+1]
